@@ -25,7 +25,7 @@ public class Hamburger {
     }
 
     public double getPrice() {
-        return price;
+        return itemizeHamburger();
     }
 
     public String getBreadRollType() {
@@ -43,43 +43,47 @@ public class Hamburger {
     public void addHamburgerAddition1(String name, double price) {
         this.addition1Name = name;
         this.addition1Price = price;
+        this.price += price;
     }
 
     public void addHamburgerAddition2(String name, double price) {
         this.addition2Name = name;
         this.addition2Price = price;
+        this.price += price;
     }
 
     public void addHamburgerAddition3(String name, double price) {
         this.addition3Name = name;
         this.addition3Price = price;
+        this.price += price;
     }
 
     public void addHamburgerAddition4(String name, double price) {
         this.addition4Name = name;
         this.addition4Price = price;
+        this.price += price;
     }
 
     public double itemizeHamburger() {
-        double totalPrice = this.price;
+        System.out.println(this.name);
+        System.out.println(this.meat);
+        System.out.println(this.breadRollType);
 
-        if(addition1Price > 0) {
-            System.out.println(addition1Name + addition1Price);
-            totalPrice += addition1Price;
+        if (addition1Name != null) {
+            System.out.println(this.addition1Name);
         }
-        if(addition2Price > 0) {
-            System.out.println(addition2Name + addition2Price);
-            totalPrice += addition2Price;
-        }if(addition3Price > 0) {
-            System.out.println(addition3Name + addition3Price);
-            totalPrice += addition3Price;
-        }if(addition4Price > 0) {
-            System.out.println(addition4Name + addition4Price);
-            totalPrice += addition4Price;
+        if (addition2Name != null) {
+            System.out.println(this.addition2Name);
+        }
+        if (addition3Name != null) {
+            System.out.println(this.addition3Name);
+        }
+        if (addition4Name != null) {
+            System.out.println(this.addition4Name);
         }
 
-        System.out.println(totalPrice);
-        return totalPrice;
+        System.out.println(this.price);  // Fiyat zaten hesaplandığı için tekrar ekleme yok!
+        return this.price;
     }
 
 }
